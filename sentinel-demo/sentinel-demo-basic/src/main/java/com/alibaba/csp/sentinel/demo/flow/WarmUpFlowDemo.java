@@ -87,7 +87,7 @@ public class WarmUpFlowDemo {
         Thread timer = new Thread(new TimerTask());
         timer.setName("sentinel-timer-task");
         timer.start();
-
+        System.out.println("--------------------开始以小流量运行------✨✨✨-----------");
         //first make the system run on a very low condition
         for (int i = 0; i < 3; i++) {
             Thread t = new Thread(new WarmUpTask());
@@ -95,6 +95,7 @@ public class WarmUpFlowDemo {
             t.start();
         }
         Thread.sleep(20000);
+        System.out.println("--------------------开始以大流量运行--------☀️☀️☀️---------");
 
         /*
          * Start more thread to simulate more qps. Since we use {@link RuleConstant.CONTROL_BEHAVIOR_WARM_UP} as
